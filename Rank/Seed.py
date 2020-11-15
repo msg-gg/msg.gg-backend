@@ -1,5 +1,7 @@
 # pip install selenium
 # pip install webdriver-manager
+import urllib
+
 import soup as soup
 import time
 from selenium import webdriver
@@ -9,7 +11,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.implicitly_wait(3)  # 웹 자원 로드를 위해 3초 기다려줌
 
-driver.get('https://maplestory.nexon.com/Ranking/World/Total')  # url 접근
 
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
@@ -40,7 +41,7 @@ cmmt_box = soup.find_all(attrs={'id': 'wrap'})
 
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a/text()
 data = []
-SeedRank = []
+seedRank = []
 reboot1SeedRank = []
 reboot2SeedRank = []
 auroraSeedRank = []
@@ -51,299 +52,566 @@ scaniaSeedRank = []
 lunaSeedRank = []
 zenithSeedRank = []
 croaSeedRank = []
-veraSeedRank = []
+beraSeedRank = []
 elysiumSeedRank = []
 arcaneSeedRank = []
 novaSeedRank = []
-
 for j in range(1, 11):
-
     # 전체월드 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + '&w=0')
+    driver.get('https://maple.gg/rank/seed?page=' + str(j))
+    url = 'https://maple.gg/rank/seed?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
-        SeedRank.append(character)
+        seedRank.append(character)
 
     # 리부트2 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=1')
+    driver.get('https://maple.gg/rank/seed/reboot2?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/reboot2?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         reboot2SeedRank.append(character)
 
     # 리부트1 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=2')
+    driver.get('https://maple.gg/rank/seed/reboot?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/reboot?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         reboot1SeedRank.append(character)
 
     # 오로라 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=3')
+    driver.get('https://maple.gg/rank/seed/aurora?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/aurora?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         auroraSeedRank.append(character)
 
     # 레드 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=4')
+    driver.get('https://maple.gg/rank/seed/red?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/red?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         redSeedRank.append(character)
 
     # 이노시스 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=5')
+    driver.get('https://maple.gg/rank/seed/enosis?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/enosis?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         enosisSeedRank.append(character)
 
     # 유니온 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=6')
+    driver.get('https://maple.gg/rank/seed/union?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/union?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         unionSeedRank.append(character)
 
     # 스카니아 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=7')
+    driver.get('https://maple.gg/rank/seed/scania?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/scania?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         scaniaSeedRank.append(character)
 
     # 루나 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=8')
+    driver.get('https://maple.gg/rank/seed/luna?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/luna?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         lunaSeedRank.append(character)
 
     # 제니스 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=9')
+    driver.get('https://maple.gg/rank/seed/zenith?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/zenith?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         zenithSeedRank.append(character)
 
     # 크로아 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=10')
+    driver.get('https://maple.gg/rank/seed/croa?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/croa?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         croaSeedRank.append(character)
 
 # 베라 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=11')
+    driver.get('https://maple.gg/rank/seed/bera?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/bera?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
-        veraSeedRank.append(character)
+        beraSeedRank.append(character)
 
     # 엘리시움 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=12')
+    driver.get('https://maple.gg/rank/seed/elysium?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/elysium?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         elysiumSeedRank.append(character)
 
     # 아케인 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=13')
+    driver.get('https://maple.gg/rank/seed/arcane?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/arcane?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         arcaneSeedRank.append(character)
 
     # 노바 랭킹
-    driver.get('https://maplestory.nexon.game.naver.com/Ranking/World/Seed/ThisWeek?page=' + str(j) + ' &w=14')
+    driver.get('https://maple.gg/rank/seed/nova?page=' + str(j))
+    url = 'https://maple.gg/rank/seed/nova?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
     for i in range(1, 11):
         character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
         charName = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[2]/dl/dt/a').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[4]').text
-        recodeTime = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[5]').text
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        character['rank'] = rank
+        character['img'] = img
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
-        character['recodeTime'] = recodeTime
         novaSeedRank.append(character)
 
-data.append(SeedRank)
+data.append(seedRank)
 data.append(reboot2SeedRank)
 data.append(reboot1SeedRank)
 data.append(auroraSeedRank)
@@ -354,7 +622,7 @@ data.append(scaniaSeedRank)
 data.append(lunaSeedRank)
 data.append(zenithSeedRank)
 data.append(croaSeedRank)
-data.append(veraSeedRank)
+data.append(beraSeedRank)
 data.append(elysiumSeedRank)
 data.append(arcaneSeedRank)
 data.append(novaSeedRank)
