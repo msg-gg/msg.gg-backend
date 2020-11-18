@@ -1,4 +1,11 @@
+import json
+# with open("groups.json") as groups:
+# 	groups_json = json.load(groups)
+#
+# 	print(groups_json["group1"])
 import time
+from collections import OrderedDict
+
 from selenium import webdriver
 import pandas
 from webdriver_manager.chrome import ChromeDriverManager
@@ -15,8 +22,10 @@ import time
 # 이미지 크롤링
 
 body = driver.find_element_by_tag_name('body')
+from collections import OrderedDict
+import json
 
-data = []
+data = OrderedDict()
 world = []
 reboot = []
 reboot2 = []
@@ -33,7 +42,7 @@ elysium = []
 arcane = []
 nova = []
 driver.get('https://maple.gg/world')
-for i in range(1, 44):
+for i in range(1, 45):
     character = {}
     rank = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
@@ -242,19 +251,20 @@ for i in range(1, 44):
     character['people'] = people
     nova.append(character)
 
-data.append(world)
-data.append(luna)
-data.append(scania)
-data.append(elysium)
-data.append(reboot)
-data.append(croa)
-data.append(aurora)
-data.append(bera)
-data.append(red)
-data.append(union)
-data.append(zenith)
-data.append(enosis)
-data.append(reboot2)
-data.append(arcane)
-data.append(nova)
-print(data)
+data['world'] = world
+data['luna'] = luna
+data['scania'] = scania
+data['elysium'] = elysium
+data['reboot'] = reboot
+data['croa'] = croa
+data['aurora'] = aurora
+data['bera'] = bera
+data['red'] = red
+data['union'] = union
+data['zenith'] = zenith
+data['enosis'] = enosis
+data['reboot2'] = reboot2
+data['arcane'] = arcane
+data['nova'] = nova
+
+with open('AllJob.json', 'w', encoding="utf-8") as make_file: json.dump(data, make_file, ensure_ascii=False, indent="\t")

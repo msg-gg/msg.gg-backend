@@ -40,7 +40,10 @@ cmmt_box = soup.find_all(attrs={'id': 'wrap'})
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[1]/td[3]
 
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a/text()
-data = []
+from collections import OrderedDict
+import json
+
+data = OrderedDict()
 dojangRank = []
 reboot1DojangRank = []
 reboot2DojangRank = []
@@ -464,7 +467,7 @@ for j in range(1, 11):
         character['recode'] = recode
         croaDojangRank.append(character)
 
-# 베라 랭킹
+    # 베라 랭킹
     driver.get('https://maple.gg/rank/dojang/bera?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/bera?page=' + str(j)
     fp = urllib.request.urlopen(url)
@@ -612,29 +615,23 @@ for j in range(1, 11):
         character['recode'] = recode
         novaDojangRank.append(character)
 
-data.append(dojangRank)
-data.append(reboot2DojangRank)
-data.append(reboot1DojangRank)
-data.append(auroraDojangRank)
-data.append(redDojangRank)
-data.append(enosisDojangRank)
-data.append(unionDojangRank)
-data.append(scaniaDojangRank)
-data.append(lunaDojangRank)
-data.append(zenithDojangRank)
-data.append(croaDojangRank)
-data.append(beraDojangRank)
-data.append(elysiumDojangRank)
-data.append(arcaneDojangRank)
-data.append(novaDojangRank)
+data['dojangRank'] = dojangRank
+data['reboot2DojangRank'] = reboot2DojangRank
+data['reboot1DojangRank'] = reboot1DojangRank
+data['auroraDojangRank'] = auroraDojangRank
+data['redDojangRank'] = redDojangRank
+data['enosisDojangRank'] = enosisDojangRank
+data['unionDojangRank'] = unionDojangRank
+data['scaniaDojangRank'] = scaniaDojangRank
+data['lunaDojangRank'] = lunaDojangRank
+data['zenithDojangRank'] = zenithDojangRank
+data['croaDojangRank'] = croaDojangRank
+data['beraDojangRank'] = beraDojangRank
+data['elysiumDojangRank'] = elysiumDojangRank
+data['arcaneDojangRank'] = arcaneDojangRank
+data['novaDojangRank'] = novaDojangRank
 
-print(data)
-import json
+with open('Dojang.json', 'w', encoding="utf-8") as make_file:
+	json.dump(data, make_file, ensure_ascii=False, indent="\t")
 
-# 첫번째 crawling 방법 : xpath를 통해 crawling하는 방법 <아래 글 참고>
-'''
-//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[1]/td[2]/dl/dt/a
-//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a
-'''
-# driver.find_element_by_xpath('//paper-button[@class="dropdown-trigger style-scope yt-dropdown-menu"]').click()
-# driver.find_element_by_xpath('//paper-listbox[@class="dropdown-content style-scope yt-dropdown-menu"]/a[1]').click()
+

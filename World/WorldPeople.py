@@ -36,7 +36,10 @@ cmmt_box = soup.find_all(attrs={'id': 'wrap'})
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[1]/td[3]
 
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a/text()
-data = []
+from collections import OrderedDict
+import json
+
+data = OrderedDict()
 level210 = []
 level240 = []
 driver.get('https://maple.gg/world')
@@ -60,7 +63,8 @@ for i in range(1, 15):
     character['people'] = people
     level240.append(character)
 
-data.append(level210)
-data.append(level240)
-print(data)
+data['level210'] = level210
+data['level240'] = level240
 
+with open('WorldPeople.json', 'w', encoding="utf-8") as make_file:
+	json.dump(data, make_file, ensure_ascii=False, indent="\t")

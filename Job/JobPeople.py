@@ -37,8 +37,10 @@ cmmt_box = soup.find_all(attrs={'id': 'wrap'})
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[1]/td[3]
 
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a/text()
+from collections import OrderedDict
+import json
 
-data = []
+data = OrderedDict()
 nightlord = []
 nightwalker = []
 darkknight = []
@@ -1201,47 +1203,50 @@ for j in range(1, 15):
     character['seedRecode'] = seedRecode
     character['seedRecodeTime'] = seedRecodeTime
     hero.append(character)
-data.append(nightlord)
-data.append(nightwalker)
-data.append(darkknight)
-data.append(demonslayer)
-data.append(demonavenger)
-data.append(dualblader)
-data.append(luminous)
-data.append(mercedes)
-data.append(mechanic)
-data.append(mihile)
-data.append(viper)
-data.append(battlemage)
-data.append(bowmaster)
-data.append(blaster)
-data.append(bishop)
-data.append(shadower)
-data.append(soulmaster)
-data.append(striker)
-data.append(marks)
-data.append(adele)
-data.append(aran)
-data.append(ark)
-data.append(arkmagefp)
-data.append(arkmagetc)
-data.append(evan)
-data.append(angelicbuster)
-data.append(wildhunter)
-data.append(windbreaker)
-data.append(shade)
-data.append(illium)
-data.append(xenon)
-data.append(zero)
-data.append(cadena)
-data.append(kaiser)
-data.append(cannonmaster)
-data.append(captain)
-data.append(kinesis)
-data.append(paladin)
-data.append(pathfinder)
-data.append(phantom)
-data.append(flamewizard)
-data.append(hoyoung)
-data.append(hero)
-print(data)
+
+data['nightlord'] = nightlord
+data['nightwalker'] = nightwalker
+data['darkknight']=darkknight
+data['demonslayer']=demonslayer
+data['demonavenger']=demonavenger
+data['dualblader']=dualblader
+data['luminous']=luminous
+data['mercedes']=mercedes
+data['mechanic']=mechanic
+data['mihile']=mihile
+data['viper']=viper
+data['battlemage']=battlemage
+data['bowmaster']=bowmaster
+data['blaster']=blaster
+data['bishop']=bishop
+data['shadower']=shadower
+data['soulmaster']=soulmaster
+data['striker']=striker
+data['marks']=marks
+data['adele']=adele
+data['aran']=aran
+data['ark']=ark
+data['arkmagefp']=arkmagefp
+data['arkmagetc']=arkmagetc
+data['evan']=evan
+data['angelicbuster']=angelicbuster
+data['wildhunter']=wildhunter
+data['windbreaker']=windbreaker
+data['shade']=shade
+data['illium']=illium
+data['xenon']=xenon
+data['zero']=zero
+data['cadena']=cadena
+data['kaiser']=kaiser
+data['cannonmaster']=cannonmaster
+data['captain']=captain
+data['kinesis']=kinesis
+data['paladin']=paladin
+data['pathfinder']=pathfinder
+data['phantom']=phantom
+data['flamewizard']=flamewizard
+data['hoyoung']=hoyoung
+data['hero']=hero
+
+with open('JobPeople.json', 'w', encoding="utf-8") as make_file:
+	json.dump(data, make_file, ensure_ascii=False, indent="\t")

@@ -40,7 +40,10 @@ cmmt_box = soup.find_all(attrs={'id': 'wrap'})
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[1]/td[3]
 
 # //*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a/text()
-data = []
+from collections import OrderedDict
+import json
+
+data = OrderedDict()
 unionRank = []
 reboot1UnionRank = []
 reboot2UnionRank = []
@@ -657,29 +660,21 @@ for j in range(1, 11):
         character['recode'] = power
         novaUnionRank.append(character)
 
-data.append(unionRank)
-data.append(reboot2UnionRank)
-data.append(reboot1UnionRank)
-data.append(auroraUnionRank)
-data.append(redUnionRank)
-data.append(enosisUnionRank)
-data.append(unionUnionRank)
-data.append(scaniaUnionRank)
-data.append(lunaUnionRank)
-data.append(zenithUnionRank)
-data.append(croaUnionRank)
-data.append(beraUnionRank)
-data.append(elysiumUnionRank)
-data.append(arcaneUnionRank)
-data.append(novaUnionRank)
+data['unionRank'] = unionRank
+data['reboot2UnionRank'] = reboot2UnionRank
+data['reboot1UnionRank'] = reboot1UnionRank
+data['auroraUnionRank'] = auroraUnionRank
+data['redUnionRank'] = redUnionRank
+data['enosisUnionRank'] = enosisUnionRank
+data['unionUnionRank'] = unionUnionRank
+data['scaniaUnionRank'] = scaniaUnionRank
+data['lunaUnionRank'] = lunaUnionRank
+data['zenithUnionRank'] = zenithUnionRank
+data['croaUnionRank'] = croaUnionRank
+data['beraUnionRank'] = beraUnionRank
+data['elysiumUnionRank'] = elysiumUnionRank
+data['arcaneUnionRank'] = arcaneUnionRank
+data['novaUnionRank'] = novaUnionRank
 
-print(data)
-import json
-
-# 첫번째 crawling 방법 : xpath를 통해 crawling하는 방법 <아래 글 참고>
-'''
-//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[1]/td[2]/dl/dt/a
-//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[2]/td[2]/dl/dt/a
-'''
-# driver.find_element_by_xpath('//paper-button[@class="dropdown-trigger style-scope yt-dropdown-menu"]').click()
-# driver.find_element_by_xpath('//paper-listbox[@class="dropdown-content style-scope yt-dropdown-menu"]/a[1]').click()
+with open('Union.json', 'w', encoding="utf-8") as make_file:
+	json.dump(data, make_file, ensure_ascii=False, indent="\t")
