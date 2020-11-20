@@ -44,211 +44,391 @@ nova = []
 driver.get('https://maple.gg/world')
 for i in range(1, 45):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     world.append(character)
 
 driver.get('https://maple.gg/world/luna')
 for i in range(1, 45):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     luna.append(character)
 
 driver.get('https://maple.gg/world/scania')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     scania.append(character)
 
 driver.get('https://maple.gg/world/elysium')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     elysium.append(character)
 
 driver.get('https://maple.gg/world/reboot')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     reboot.append(character)
 
 driver.get('https://maple.gg/world/croa')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     croa.append(character)
 
 driver.get('https://maple.gg/world/aurora')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     aurora.append(character)
 
 driver.get('https://maple.gg/world/bera')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     bera.append(character)
 
 driver.get('https://maple.gg/world/red')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     red.append(character)
 
 driver.get('https://maple.gg/world/union')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     union.append(character)
 
 driver.get('https://maple.gg/world/zenith')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     zenith.append(character)
 
 driver.get('https://maple.gg/world/enosis')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
-    enosis.append(character)
-driver.get('https://maple.gg/world/reboot2')
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
 
+    enosis.append(character)
+
+driver.get('https://maple.gg/world/reboot2')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     reboot2.append(character)
 
 driver.get('https://maple.gg/world/arcane')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     arcane.append(character)
 
 driver.get('https://maple.gg/world/nova')
 for i in range(1, 44):
     character = {}
-    rank = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
-    name = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
-    people = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
-    character['world'] = rank
-    character['name'] = name
-    character['people'] = people
+    if i <= 22:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[1]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+    else:
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[1]').text
+        name = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[2]').text
+        people = driver.find_element_by_xpath(
+            '//*[@id="app"]/div[2]/section/div/div/div[2]/div[' + str(i) + ']/div[3]/div/div').text
+        character['world'] = rank
+        character['name'] = name
+        character['people'] = people
+
     nova.append(character)
 
 data['world'] = world
