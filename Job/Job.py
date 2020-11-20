@@ -94,7 +94,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -102,7 +102,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		nightlord.append(top)
 	else:
 		top['title'] = title
@@ -110,7 +110,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		nightlord.append(top)
 
 driver.get('https://maple.gg/job/nightwalker')
@@ -126,7 +126,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -134,7 +134,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		nightwalker.append(top)
 	else:
 		top['title'] = title
@@ -142,7 +142,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		nightwalker.append(top)
 
 driver.get('https://maple.gg/job/darkknight')
@@ -158,7 +158,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -166,7 +166,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		darkknight.append(top)
 	else:
 		top['title'] = title
@@ -174,7 +174,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		darkknight.append(top)
 
 driver.get('https://maple.gg/job/demonslayer')
@@ -190,7 +190,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -198,7 +198,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		demonslayer.append(top)
 	else:
 		top['title'] = title
@@ -206,7 +206,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		demonslayer.append(top)
 
 driver.get('https://maple.gg/job/demonavenger')
@@ -222,7 +222,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -230,7 +230,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		demonavenger.append(top)
 	else:
 		top['title'] = title
@@ -238,7 +238,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		demonavenger.append(top)
 
 driver.get('https://maple.gg/job/dualblader')
@@ -254,7 +254,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -262,7 +262,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		dualblader.append(top)
 	else:
 		top['title'] = title
@@ -270,7 +270,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		dualblader.append(top)
 
 driver.get('https://maple.gg/job/luminous')
@@ -286,7 +286,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -294,7 +294,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		luminous.append(top)
 	else:
 		top['title'] = title
@@ -302,7 +302,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		luminous.append(top)
 
 driver.get('https://maple.gg/job/mercedes')
@@ -318,7 +318,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -326,7 +326,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		mercedes.append(top)
 	else:
 		top['title'] = title
@@ -334,7 +334,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		mercedes.append(top)
 
 driver.get('https://maple.gg/job/mechanic')
@@ -350,7 +350,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -358,7 +358,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		mechanic.append(top)
 	else:
 		top['title'] = title
@@ -366,7 +366,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		mechanic.append(top)
 
 driver.get('https://maple.gg/job/mihile')
@@ -382,7 +382,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -390,7 +390,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		mihile.append(top)
 	else:
 		top['title'] = title
@@ -398,7 +398,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		mihile.append(top)
 
 driver.get('https://maple.gg/job/viper')
@@ -414,7 +414,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -422,7 +422,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		viper.append(top)
 	else:
 		top['title'] = title
@@ -430,7 +430,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		viper.append(top)
 
 driver.get('https://maple.gg/job/battlemage')
@@ -446,7 +446,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -454,7 +454,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		battlemage.append(top)
 	else:
 		top['title'] = title
@@ -462,7 +462,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		battlemage.append(top)
 
 driver.get('https://maple.gg/job/bowmaster')
@@ -478,7 +478,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -486,7 +486,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		bowmaster.append(top)
 	else:
 		top['title'] = title
@@ -494,7 +494,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		bowmaster.append(top)
 
 driver.get('https://maple.gg/job/blaster')
@@ -510,7 +510,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -518,7 +518,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		blaster.append(top)
 	else:
 		top['title'] = title
@@ -526,7 +526,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		blaster.append(top)
 
 driver.get('https://maple.gg/job/bishop')
@@ -542,7 +542,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -550,7 +550,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		bishop.append(top)
 	else:
 		top['title'] = title
@@ -558,7 +558,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		bishop.append(top)
 
 driver.get('https://maple.gg/job/shadower')
@@ -574,7 +574,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -582,7 +582,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		shadower.append(top)
 	else:
 		top['title'] = title
@@ -590,7 +590,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		shadower.append(top)
 
 driver.get('https://maple.gg/job/soulmaster')
@@ -606,7 +606,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -614,7 +614,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		soulmaster.append(top)
 	else:
 		top['title'] = title
@@ -622,7 +622,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		soulmaster.append(top)
 
 driver.get('https://maple.gg/job/striker')
@@ -638,7 +638,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -646,7 +646,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		striker.append(top)
 	else:
 		top['title'] = title
@@ -654,7 +654,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		striker.append(top)
 
 driver.get('https://maple.gg/job/marks')
@@ -670,7 +670,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -678,7 +678,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		marks.append(top)
 	else:
 		top['title'] = title
@@ -686,7 +686,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		marks.append(top)
 
 driver.get('https://maple.gg/job/adele')
@@ -702,7 +702,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -710,7 +710,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		adele.append(top)
 	else:
 		top['title'] = title
@@ -718,7 +718,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		adele.append(top)
 
 driver.get('https://maple.gg/job/aran')
@@ -734,7 +734,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -742,7 +742,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		aran.append(top)
 	else:
 		top['title'] = title
@@ -750,7 +750,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		aran.append(top)
 
 driver.get('https://maple.gg/job/ark')
@@ -766,7 +766,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -774,7 +774,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		ark.append(top)
 	else:
 		top['title'] = title
@@ -782,7 +782,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		ark.append(top)
 driver.get('https://maple.gg/job/arkmagefp')
 for j in range(1, 4):
@@ -797,7 +797,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -805,7 +805,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		arkmagefp.append(top)
 	else:
 		top['title'] = title
@@ -813,7 +813,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		arkmagefp.append(top)
 driver.get('https://maple.gg/job/arkmagetc')
 for j in range(1, 4):
@@ -828,7 +828,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -836,7 +836,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		arkmagetc.append(top)
 	else:
 		top['title'] = title
@@ -844,7 +844,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		arkmagetc.append(top)
 driver.get('https://maple.gg/job/evan')
 for j in range(1, 4):
@@ -859,7 +859,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -867,7 +867,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		evan.append(top)
 	else:
 		top['title'] = title
@@ -875,7 +875,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		evan.append(top)
 driver.get('https://maple.gg/job/angelicbuster')
 for j in range(1, 4):
@@ -890,7 +890,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -898,7 +898,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		angelicbuster.append(top)
 	else:
 		top['title'] = title
@@ -906,7 +906,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		angelicbuster.append(top)
 driver.get('https://maple.gg/job/wildhunter')
 for j in range(1, 4):
@@ -921,7 +921,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -929,7 +929,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		wildhunter.append(top)
 	else:
 		top['title'] = title
@@ -937,7 +937,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		wildhunter.append(top)
 driver.get('https://maple.gg/job/windbreaker')
 for j in range(1, 4):
@@ -952,7 +952,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -960,7 +960,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		windbreaker.append(top)
 	else:
 		top['title'] = title
@@ -968,7 +968,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		windbreaker.append(top)
 driver.get('https://maple.gg/job/shade')
 for j in range(1, 4):
@@ -983,7 +983,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -991,7 +991,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		shade.append(top)
 	else:
 		top['title'] = title
@@ -999,7 +999,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		shade.append(top)
 driver.get('https://maple.gg/job/illium')
 for j in range(1, 4):
@@ -1014,7 +1014,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1022,7 +1022,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		illium.append(top)
 	else:
 		top['title'] = title
@@ -1030,7 +1030,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		illium.append(top)
 driver.get('https://maple.gg/job/xenon')
 for j in range(1, 4):
@@ -1045,7 +1045,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1053,7 +1053,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		xenon.append(top)
 	else:
 		top['title'] = title
@@ -1061,7 +1061,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		xenon.append(top)
 driver.get('https://maple.gg/job/zero')
 for j in range(1, 4):
@@ -1076,7 +1076,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1084,7 +1084,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		zero.append(top)
 	else:
 		top['title'] = title
@@ -1092,7 +1092,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		zero.append(top)
 driver.get('https://maple.gg/job/cadena')
 for j in range(1, 4):
@@ -1107,7 +1107,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1115,7 +1115,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		cadena.append(top)
 	else:
 		top['title'] = title
@@ -1123,7 +1123,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		cadena.append(top)
 driver.get('https://maple.gg/job/kaiser')
 for j in range(1, 4):
@@ -1138,7 +1138,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1146,7 +1146,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		kaiser.append(top)
 	else:
 		top['title'] = title
@@ -1154,7 +1154,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		kaiser.append(top)
 driver.get('https://maple.gg/job/cannonmaster')
 for j in range(1, 4):
@@ -1169,7 +1169,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1177,7 +1177,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		cannonmaster.append(top)
 	else:
 		top['title'] = title
@@ -1185,7 +1185,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		cannonmaster.append(top)
 driver.get('https://maple.gg/job/captain')
 for j in range(1, 4):
@@ -1200,7 +1200,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1208,7 +1208,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		captain.append(top)
 	else:
 		top['title'] = title
@@ -1216,7 +1216,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		captain.append(top)
 driver.get('https://maple.gg/job/kinesis')
 for j in range(1, 4):
@@ -1231,7 +1231,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1239,7 +1239,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		kinesis.append(top)
 	else:
 		top['title'] = title
@@ -1247,7 +1247,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		kinesis.append(top)
 driver.get('https://maple.gg/job/paladin')
 for j in range(1, 4):
@@ -1262,7 +1262,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1270,7 +1270,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		paladin.append(top)
 	else:
 		top['title'] = title
@@ -1278,7 +1278,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		paladin.append(top)
 driver.get('https://maple.gg/job/pathfinder')
 for j in range(1, 4):
@@ -1293,7 +1293,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1301,7 +1301,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		pathfinder.append(top)
 	else:
 		top['title'] = title
@@ -1309,7 +1309,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		pathfinder.append(top)
 driver.get('https://maple.gg/job/phantom')
 for j in range(1, 4):
@@ -1324,7 +1324,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1332,7 +1332,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		phantom.append(top)
 	else:
 		top['title'] = title
@@ -1340,7 +1340,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		phantom.append(top)
 driver.get('https://maple.gg/job/flamewizard')
 for j in range(1, 4):
@@ -1355,7 +1355,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1363,7 +1363,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		flamewizard.append(top)
 	else:
 		top['title'] = title
@@ -1371,7 +1371,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		flamewizard.append(top)
 driver.get('https://maple.gg/job/hoyoung')
 for j in range(1, 4):
@@ -1386,7 +1386,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1394,7 +1394,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		hoyoung.append(top)
 	else:
 		top['title'] = title
@@ -1402,7 +1402,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		hoyoung.append(top)
 driver.get('https://maple.gg/job/hero')
 for j in range(1, 4):
@@ -1417,7 +1417,7 @@ for j in range(1, 4):
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[1]/span').text
 	ranking = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[2]/span').text
-	dete = driver.find_element_by_xpath(
+	date = driver.find_element_by_xpath(
 		'//*[@id="app"]/div[2]/div[4]/div[1]/div/div[' + str(j) + ']/section/div/div[3]/span').text
 	if j != 3:
 		top['title'] = title
@@ -1425,7 +1425,7 @@ for j in range(1, 4):
 		top['topTime'] = topTime
 		top['nameLevel'] = nameLevel
 		top['ranking'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		hero.append(top)
 	else:
 		top['title'] = title
@@ -1433,7 +1433,7 @@ for j in range(1, 4):
 		top['jobCount'] = topTime
 		top['people'] = nameLevel
 		top['ratio'] = ranking
-		top['dete'] = dete
+		top['date'] = date
 		hero.append(top)
 
 data['nightlord'] = nightlord
