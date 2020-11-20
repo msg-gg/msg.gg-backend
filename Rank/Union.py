@@ -1,5 +1,6 @@
 # pip install selenium
 # pip install webdriver-manager
+import re
 import urllib
 
 import soup as soup
@@ -59,6 +60,7 @@ beraUnionRank = []
 elysiumUnionRank = []
 arcaneUnionRank = []
 novaUnionRank = []
+
 for j in range(1, 6):
     # 전체월드 랭킹
     driver.get('https://maple.gg/rank/union?page=' + str(j))
@@ -86,20 +88,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         unionRank.append(character)
 
+for j in range(1, 6):
     # 리부트2 랭킹
     driver.get('https://maple.gg/rank/union/reboot2?page=' + str(j))
     url = 'https://maple.gg/rank/union/reboot2?page=' + str(j)
@@ -126,20 +126,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         reboot2UnionRank.append(character)
 
+for j in range(1, 6):
     # 리부트1 랭킹
     driver.get('https://maple.gg/rank/union/reboot?page=' + str(j))
     url = 'https://maple.gg/rank/union/reboot?page=' + str(j)
@@ -166,20 +164,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         reboot1UnionRank.append(character)
 
+for j in range(1, 6):
     # 오로라 랭킹
     driver.get('https://maple.gg/rank/union/aurora?page=' + str(j))
     url = 'https://maple.gg/rank/union/aurora?page=' + str(j)
@@ -206,20 +202,17 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
-        character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         auroraUnionRank.append(character)
 
+for j in range(1, 6):
     # 레드 랭킹
     driver.get('https://maple.gg/rank/union/red?page=' + str(j))
     url = 'https://maple.gg/rank/union/red?page=' + str(j)
@@ -235,7 +228,7 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 2):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -246,20 +239,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         redUnionRank.append(character)
 
+for j in range(1, 6):
     # 이노시스 랭킹
     driver.get('https://maple.gg/rank/union/enosis?page=' + str(j))
     url = 'https://maple.gg/rank/union/enosis?page=' + str(j)
@@ -286,22 +277,20 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         enosisUnionRank.append(character)
 
+for j in range(1, 6):
     # 유니온 랭킹
-    driver.get('https://maple.gg/rank/union?page=' + str(j))
+    driver.get('https://maple.gg/rank/union/union?page=' + str(j))
     url = 'https://maple.gg/rank/union/union?page=' + str(j)
     fp = urllib.request.urlopen(url)
     source = fp.read();
@@ -326,20 +315,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         unionUnionRank.append(character)
 
+for j in range(1, 6):
     # 스카니아 랭킹
     driver.get('https://maple.gg/rank/union/scania?page=' + str(j))
     url = 'https://maple.gg/rank/union/scania?page=' + str(j)
@@ -366,20 +353,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         scaniaUnionRank.append(character)
 
+for j in range(1, 6):
     # 루나 랭킹
     driver.get('https://maple.gg/rank/union/luna?page=' + str(j))
     url = 'https://maple.gg/rank/union/luna?page=' + str(j)
@@ -406,20 +391,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         lunaUnionRank.append(character)
 
+for j in range(1, 6):
     # 제니스 랭킹
     driver.get('https://maple.gg/rank/union/zenith?page=' + str(j))
     url = 'https://maple.gg/rank/union/zenith?page=' + str(j)
@@ -446,20 +429,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         zenithUnionRank.append(character)
 
+for j in range(1, 6):
     # 크로아 랭킹
     driver.get('https://maple.gg/rank/union/croa?page=' + str(j))
     url = 'https://maple.gg/rank/union/croa?page=' + str(j)
@@ -486,21 +467,19 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         croaUnionRank.append(character)
 
-# 베라 랭킹
+for j in range(1, 6):
+    # 베라 랭킹
     driver.get('https://maple.gg/rank/union/bera?page=' + str(j))
     url = 'https://maple.gg/rank/union/bera?page=' + str(j)
     fp = urllib.request.urlopen(url)
@@ -515,7 +494,7 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 21):
+    for i in range(1, 6):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -526,20 +505,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         beraUnionRank.append(character)
 
+for j in range(1, 6):
     # 엘리시움 랭킹
     driver.get('https://maple.gg/rank/union/elysium?page=' + str(j))
     url = 'https://maple.gg/rank/union/elysium?page=' + str(j)
@@ -566,20 +543,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         elysiumUnionRank.append(character)
 
+for j in range(1, 6):
     # 아케인 랭킹
     driver.get('https://maple.gg/rank/union/arcane?page=' + str(j))
     url = 'https://maple.gg/rank/union/arcane?page=' + str(j)
@@ -606,26 +581,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         arcaneUnionRank.append(character)
-driver.get('https://maple.gg/rank/union/nova')
-people = driver.find_element_by_xpath(
-    '//*[@id="app"]/section[4]/section/header/b').text
-people = re.findall("\d+", people)
-num = people[0]
-num = int(num) / 20
-    for j in range(1, int(num + 1)):
+
+for j in range(1, 4):
     # 노바 랭킹
     driver.get('https://maple.gg/rank/union/nova?page=' + str(j))
     url = 'https://maple.gg/rank/union/nova?page=' + str(j)
@@ -652,18 +619,15 @@ num = int(num) / 20
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        unionLevel = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]/span').text
-        power = driver.find_element_by_xpath(
-            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        recode = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
         character['rank'] = rank
         character['img'] = img
         character['name'] = charName
         character['level'] = level
         character['job'] = job
-        character['unionLevel'] = unionLevel
-        character['recode'] = power
+        character['recode'] = recode
         novaUnionRank.append(character)
 
 data['unionRank'] = unionRank
