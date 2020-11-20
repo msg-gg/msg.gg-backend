@@ -7,6 +7,7 @@ import time
 from selenium import webdriver
 import pandas
 from webdriver_manager.chrome import ChromeDriverManager
+import re
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.implicitly_wait(3)  # 웹 자원 로드를 위해 3초 기다려줌
@@ -577,6 +578,13 @@ for j in range(1, 6):
         character['recode'] = recode
         arcaneSeedRank.append(character)
 
+driver.get('https://maple.gg/rank/seed/nova')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+for j in range(1, num + 1):
     # 노바 랭킹
     driver.get('https://maple.gg/rank/seed/nova?page=' + str(j))
     url = 'https://maple.gg/rank/seed/nova?page=' + str(j)
