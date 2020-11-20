@@ -60,7 +60,7 @@ elysiumDojangRank = []
 arcaneDojangRank = []
 novaDojangRank = []
 
-for j in range(1, 11):
+for j in range(1, 6):
     # 전체월드 랭킹
     driver.get('https://maple.gg/rank/dojang?page=' + str(j))
     url = 'https://maple.gg/rank/dojang?page=' + str(j)
@@ -76,7 +76,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -113,7 +113,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -150,7 +150,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -187,7 +187,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -223,7 +223,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -260,7 +260,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -297,7 +297,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -334,7 +334,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -371,7 +371,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -408,7 +408,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -445,7 +445,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -482,7 +482,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -519,7 +519,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -556,7 +556,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -579,6 +579,13 @@ for j in range(1, 11):
         arcaneDojangRank.append(character)
 
     # 노바 랭킹
+driver.get('https://maple.gg/rank/dojang/nova')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+for j in range(1, int(num + 1)):
     driver.get('https://maple.gg/rank/dojang/nova?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/nova?page=' + str(j)
     fp = urllib.request.urlopen(url)
@@ -593,7 +600,7 @@ for j in range(1, 11):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 11):
+    for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
