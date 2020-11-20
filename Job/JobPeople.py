@@ -1,5 +1,7 @@
 # pip install selenium
 # pip install webdriver-manager
+import urllib
+
 import soup as soup
 import time
 from selenium import webdriver
@@ -85,12 +87,29 @@ flamewizard = []
 hoyoung = []
 hero = []
 
+url = 'https://maple.gg/job/nightlord'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
 
 driver.get('https://maple.gg/job/nightlord')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -104,6 +123,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -112,11 +132,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     nightlord.append(character)
 
+url = 'https://maple.gg/job/nightwalker'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/nightwalker')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -130,6 +168,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -138,11 +177,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     nightwalker.append(character)
 
+url = 'https://maple.gg/job/darkknight'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/darkknight')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -156,6 +213,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -164,11 +222,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     darkknight.append(character)
 
+url = 'https://maple.gg/job/demonslayer'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/demonslayer')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -182,6 +258,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -190,11 +267,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     demonslayer.append(character)
 
-driver.get('https://maple.gg/job/dualblader')
+url = 'https://maple.gg/job/demonavenger'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+driver.get('https://maple.gg/job/demonavenger')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -208,6 +303,52 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
+    character['world'] = world
+    character['ratio'] = ratio
+    character['recode'] = recode
+    character['recodeTime'] = recodeTime
+    character['seedRecode'] = seedRecode
+    character['seedRecodeTime'] = seedRecodeTime
+    demonavenger.append(character)
+
+url = 'https://maple.gg/job/dualblader'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+driver.get('https://maple.gg/job/dualblader')
+for j in range(1, 15):
+    character = {}
+    ranking = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
+    world = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
+    ratio = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
+    recode = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
+    recodeTime = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
+    seedRecode = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
+    seedRecodeTime = driver.find_element_by_xpath(
+        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
+    character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -216,11 +357,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     dualblader.append(character)
 
+url = 'https://maple.gg/job/luminous'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/luminous')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -234,6 +393,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -242,11 +402,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     luminous.append(character)
 
+url = 'https://maple.gg/job/mercedes'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/mercedes')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -260,6 +438,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -268,11 +447,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     mercedes.append(character)
 
+url = 'https://maple.gg/job/mechanic'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/mechanic')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -286,6 +483,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -294,11 +492,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     mechanic.append(character)
 
+url = 'https://maple.gg/job/mihile'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/mihile')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -312,6 +528,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -320,11 +537,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     mihile.append(character)
 
+url = 'https://maple.gg/job/viper'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/viper')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -338,6 +573,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -346,11 +582,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     viper.append(character)
 
+url = 'https://maple.gg/job/battlemage'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/battlemage')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -364,6 +618,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -372,11 +627,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     battlemage.append(character)
 
+url = 'https://maple.gg/job/bowmaster'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/bowmaster')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -390,6 +663,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -398,11 +672,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     bowmaster.append(character)
 
+url = 'https://maple.gg/job/blaster'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/blaster')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -416,6 +708,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -424,11 +717,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     blaster.append(character)
 
+url = 'https://maple.gg/job/bishop'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/bishop')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -442,6 +753,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -450,11 +762,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     bishop.append(character)
 
+url = 'https://maple.gg/job/shadower'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/shadower')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -468,6 +798,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -476,11 +807,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     shadower.append(character)
 
+url = 'https://maple.gg/job/soulmaster'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/soulmaster')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -494,6 +843,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -502,11 +852,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     soulmaster.append(character)
 
+url = 'https://maple.gg/job/striker'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/striker')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -520,6 +888,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -528,11 +897,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     striker.append(character)
 
+url = 'https://maple.gg/job/marks'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/marks')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -546,6 +933,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -554,11 +942,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     marks.append(character)
 
+url = 'https://maple.gg/job/adele'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/adele')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -572,6 +978,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -580,11 +987,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     adele.append(character)
 
+url = 'https://maple.gg/job/aran'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/aran')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -598,6 +1023,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -606,11 +1032,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     aran.append(character)
 
+url = 'https://maple.gg/job/ark'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/ark')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -624,6 +1068,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -632,11 +1077,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     ark.append(character)
 
+url = 'https://maple.gg/job/arkmagefp'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/arkmagefp')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -650,6 +1113,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -658,11 +1122,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     arkmagefp.append(character)
 
+url = 'https://maple.gg/job/arkmagetc'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/arkmagetc')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -676,6 +1158,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -684,11 +1167,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     arkmagetc.append(character)
 
+url = 'https://maple.gg/job/evan'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/evan')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -702,6 +1203,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -710,11 +1212,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     evan.append(character)
 
+url = 'https://maple.gg/job/angelicbuster'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/angelicbuster')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -728,6 +1248,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -736,11 +1257,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     angelicbuster.append(character)
 
+url = 'https://maple.gg/job/wildhunter'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/wildhunter')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -754,6 +1293,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -762,11 +1302,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     wildhunter.append(character)
 
+url = 'https://maple.gg/job/windbreaker'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/windbreaker')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -780,6 +1338,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -788,11 +1347,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     windbreaker.append(character)
 
+url = 'https://maple.gg/job/shade'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/shade')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -806,6 +1383,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -814,11 +1392,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     shade.append(character)
 
+url = 'https://maple.gg/job/illium'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/illium')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -832,6 +1428,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -840,11 +1437,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     illium.append(character)
 
+url = 'https://maple.gg/job/xenon'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/xenon')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -858,6 +1473,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -866,37 +1482,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     nightlord.append(character)
 
-driver.get('https://maple.gg/job/xenon')
-for j in range(1, 15):
-    character = {}
-    ranking = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
-    world = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
-    ratio = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
-    character['ranking'] = ranking
-    character['world'] = world
-    character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
-    nightlord.append(character)
+url = 'https://maple.gg/job/zero'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
 
 driver.get('https://maple.gg/job/zero')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -910,6 +1518,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -918,11 +1527,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     zero.append(character)
 
+url = 'https://maple.gg/job/cadena'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/cadena')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -936,6 +1563,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -944,11 +1572,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     cadena.append(character)
 
+url = 'https://maple.gg/job/kaiser'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/kaiser')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -962,6 +1608,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -970,11 +1617,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     kaiser.append(character)
 
+url = 'https://maple.gg/job/cannonmaster'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/cannonmaster')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -988,6 +1653,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -996,11 +1662,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     cannonmaster.append(character)
 
+url = 'https://maple.gg/job/captain'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/captain')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1014,6 +1698,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1022,11 +1707,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     captain.append(character)
 
+url = 'https://maple.gg/job/kinesis'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/kinesis')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1040,6 +1743,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1048,11 +1752,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     kinesis.append(character)
 
+url = 'https://maple.gg/job/paladin'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/paladin')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1066,6 +1788,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1074,11 +1797,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     paladin.append(character)
 
+url = 'https://maple.gg/job/pathfinder'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/pathfinder')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1092,6 +1833,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1100,11 +1842,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     pathfinder.append(character)
 
+url = 'https://maple.gg/job/phantom'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/phantom')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1118,6 +1878,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1126,11 +1887,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     phantom.append(character)
 
+url = 'https://maple.gg/job/flamewizard'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/flamewizard')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1144,6 +1923,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1152,11 +1932,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     flamewizard.append(character)
 
+url = 'https://maple.gg/job/hoyoung'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/hoyoung')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1170,6 +1968,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
@@ -1178,11 +1977,29 @@ for j in range(1, 15):
     character['seedRecodeTime'] = seedRecodeTime
     hoyoung.append(character)
 
+url = 'https://maple.gg/job/hero'
+fp = urllib.request.urlopen(url)
+source = fp.read();
+fp.close()
+imgURL = []
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="bg-light-yellow")
+
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("tr", class_="")
+for i in soup:
+    imgURL.append(i.find("img")["src"])
+
 driver.get('https://maple.gg/job/hero')
 for j in range(1, 15):
     character = {}
     ranking = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[1]').text
+    worldImg = imgURL[j - 1]
     world = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
@@ -1196,6 +2013,7 @@ for j in range(1, 15):
     seedRecodeTime = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
+    character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
     character['recode'] = recode
