@@ -1,5 +1,6 @@
 # pip install selenium
 # pip install webdriver-manager
+import re
 import urllib
 
 import soup as soup
@@ -60,7 +61,18 @@ elysiumDojangRank = []
 arcaneDojangRank = []
 novaDojangRank = []
 
-for j in range(1, 6):
+driver.get('https://maple.gg/rank/dojang')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 전체월드 랭킹
     driver.get('https://maple.gg/rank/dojang?page=' + str(j))
     url = 'https://maple.gg/rank/dojang?page=' + str(j)
@@ -97,7 +109,18 @@ for j in range(1, 6):
         character['job'] = job
         character['recode'] = recode
         dojangRank.append(character)
-
+driver.get('https://maple.gg/rank/dojang/reboot2')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 리부트2 랭킹
     driver.get('https://maple.gg/rank/dojang/reboot2?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/reboot2?page=' + str(j)
@@ -135,6 +158,18 @@ for j in range(1, 6):
         character['recode'] = recode
         reboot2DojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/reboot')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 리부트1 랭킹
     driver.get('https://maple.gg/rank/dojang/reboot?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/reboot?page=' + str(j)
@@ -172,6 +207,18 @@ for j in range(1, 6):
         character['recode'] = recode
         reboot1DojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/aurora')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 오로라 랭킹
     driver.get('https://maple.gg/rank/dojang/aurora?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/aurora?page=' + str(j)
@@ -208,6 +255,18 @@ for j in range(1, 6):
         character['recode'] = recode
         auroraDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/red')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 레드 랭킹
     driver.get('https://maple.gg/rank/dojang/red?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/red?page=' + str(j)
@@ -245,6 +304,18 @@ for j in range(1, 6):
         character['recode'] = recode
         redDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/enosis')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 이노시스 랭킹
     driver.get('https://maple.gg/rank/dojang/enosis?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/enosis?page=' + str(j)
@@ -282,6 +353,18 @@ for j in range(1, 6):
         character['recode'] = recode
         enosisDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/union')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 유니온 랭킹
     driver.get('https://maple.gg/rank/dojang/union?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/union?page=' + str(j)
@@ -319,6 +402,18 @@ for j in range(1, 6):
         character['recode'] = recode
         unionDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/scania')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 스카니아 랭킹
     driver.get('https://maple.gg/rank/dojang/scania?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/scania?page=' + str(j)
@@ -356,6 +451,18 @@ for j in range(1, 6):
         character['recode'] = recode
         scaniaDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/luna')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+     num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 루나 랭킹
     driver.get('https://maple.gg/rank/dojang/luna?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/luna?page=' + str(j)
@@ -393,6 +500,18 @@ for j in range(1, 6):
         character['recode'] = recode
         lunaDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/zenith')
+people = driver.find_element_by_xpath(
+     '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 제니스 랭킹
     driver.get('https://maple.gg/rank/dojang/zenith?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/zenith?page=' + str(j)
@@ -430,6 +549,18 @@ for j in range(1, 6):
         character['recode'] = recode
         zenithDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/croa')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 크로아 랭킹
     driver.get('https://maple.gg/rank/dojang/croa?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/croa?page=' + str(j)
@@ -467,6 +598,18 @@ for j in range(1, 6):
         character['recode'] = recode
         croaDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/bera')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 베라 랭킹
     driver.get('https://maple.gg/rank/dojang/bera?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/bera?page=' + str(j)
@@ -482,7 +625,7 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 21):
+    for i in range(1, num + 1):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
@@ -504,6 +647,18 @@ for j in range(1, 6):
         character['recode'] = recode
         beraDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/elysium')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 엘리시움 랭킹
     driver.get('https://maple.gg/rank/dojang/elysium?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/elysium?page=' + str(j)
@@ -541,6 +696,18 @@ for j in range(1, 6):
         character['recode'] = recode
         elysiumDojangRank.append(character)
 
+driver.get('https://maple.gg/rank/dojang/arcane')
+people = driver.find_element_by_xpath(
+    '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
+people = re.findall("\d+", people)
+num = people[0]
+num = int(num) / 20
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
     # 아케인 랭킹
     driver.get('https://maple.gg/rank/dojang/arcane?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/arcane?page=' + str(j)
@@ -578,14 +745,19 @@ for j in range(1, 6):
         character['recode'] = recode
         arcaneDojangRank.append(character)
 
-    # 노바 랭킹
 driver.get('https://maple.gg/rank/dojang/nova')
 people = driver.find_element_by_xpath(
     '//*[@id="app"]/section[4]/section/header/b').text
+people = people.replace(",", "")
 people = re.findall("\d+", people)
 num = people[0]
 num = int(num) / 20
-for j in range(1, int(num + 1)):
+if num < 6:
+    num = int(num)
+else:
+    num = 5
+for j in range(1, num + 1):
+    # 노바 랭킹
     driver.get('https://maple.gg/rank/dojang/nova?page=' + str(j))
     url = 'https://maple.gg/rank/dojang/nova?page=' + str(j)
     fp = urllib.request.urlopen(url)
@@ -640,5 +812,3 @@ data['novaDojangRank'] = novaDojangRank
 
 with open('Dojang.json', 'w', encoding="utf-8") as make_file:
 	json.dump(data, make_file, ensure_ascii=False, indent="\t")
-
-
