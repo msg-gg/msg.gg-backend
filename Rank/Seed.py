@@ -584,7 +584,7 @@ people = driver.find_element_by_xpath(
 people = re.findall("\d+", people)
 num = people[0]
 num = int(num) / 20
-for j in range(1, num + 1):
+for j in range(1, int(num + 1)):
     # 노바 랭킹
     driver.get('https://maple.gg/rank/seed/nova?page=' + str(j))
     url = 'https://maple.gg/rank/seed/nova?page=' + str(j)
