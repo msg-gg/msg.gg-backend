@@ -20,19 +20,19 @@
 			"title": "인구수 순위",
 			"ranking": "10위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 57,757명",
+			"people": "인구수 57,885명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"nightwalker": [
+	"nightWalker": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "59층",
-			"topTime": "14분 11초",
-			"nameLevel": "퍼핏 / Lv.273",
-			"ranking": "206위",
-			"date": "달성일: 20년 5월 22일"
+			"topTime": "13분 6초",
+			"nameLevel": "음산18 / Lv.275",
+			"ranking": "32위",
+			"date": "달성일: 20년 11월 23일"
 		},
 		{
 			"title": "더시드 최고기록",
@@ -46,7 +46,7 @@
 			"title": "인구수 순위",
 			"ranking": "35위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 17,249명",
+			"people": "인구수 17,311명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -64,7 +64,7 @@
 			"title": "더시드 최고기록",
 			"topRecode": "50층",
 			"topTime": "46분 15초",
-			"nameLevel": "얼옴 / Lv.270",
+			"nameLevel": "얼옴 / Lv.271",
 			"ranking": "9위",
 			"date": "달성일: 20년 7월 31일"
 		},
@@ -72,7 +72,7 @@
 			"title": "인구수 순위",
 			"ranking": "12위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 50,709명",
+			"people": "인구수 50,763명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
@@ -98,7 +98,7 @@
 			"title": "인구수 순위",
 			"ranking": "28위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 24,730명",
+			"people": "인구수 24,813명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -124,7 +124,7 @@
 			"title": "인구수 순위",
 			"ranking": "8위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 59,508명",
+			"people": "인구수 59,614명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
@@ -150,7 +150,7 @@
 			"title": "인구수 순위",
 			"ranking": "2위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 128,201명",
+			"people": "인구수 128,508명",
 			"ratio": "7%",
 			"date": "기준일: 오늘"
 		}
@@ -176,7 +176,7 @@
 			"title": "인구수 순위",
 			"ranking": "23위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 28,468명",
+			"people": "인구수 28,550명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -186,7 +186,7 @@
 			"title": "무릉 도장 최고기록",
 			"topRecode": "66층",
 			"topTime": "14분 44초",
-			"nameLevel": "홍이은지 / Lv.273",
+			"nameLevel": "홍이은지 / Lv.274",
 			"ranking": "6위",
 			"date": "달성일: 20년 10월 9일"
 		},
@@ -202,19 +202,19 @@
 			"title": "인구수 순위",
 			"ranking": "25위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 27,081명",
+			"people": "인구수 27,145명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"mechanic": [
+	"mecanic": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "64층",
-			"topTime": "14분 57초",
+			"topTime": "14분 9초",
 			"nameLevel": "Dash / Lv.275",
-			"ranking": "26위",
-			"date": "달성일: 20년 11월 13일"
+			"ranking": "31위",
+			"date": "달성일: 20년 11월 22일"
 		},
 		{
 			"title": "더시드 최고기록",
@@ -228,17 +228,17 @@
 			"title": "인구수 순위",
 			"ranking": "42위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 6,326명",
+			"people": "인구수 6,370명",
 			"ratio": "0%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"mihile": [
+	"mikhail": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "58층",
 			"topTime": "13분 56초",
-			"nameLevel": "부도 / Lv.273",
+			"nameLevel": "부도 / Lv.274",
 			"ranking": "203위",
 			"date": "달성일: 20년 5월 3일"
 		},
@@ -254,7 +254,7 @@
 			"title": "인구수 순위",
 			"ranking": "43위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 5,469명",
+			"people": "인구수 5,503명",
 			"ratio": "0%",
 			"date": "기준일: 오늘"
 		}
@@ -280,12 +280,12 @@
 			"title": "인구수 순위",
 			"ranking": "11위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 51,447명",
+			"people": "인구수 51,529명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"battlemage": [
+	"battleMage": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "60층",
@@ -306,7 +306,7 @@
 			"title": "인구수 순위",
 			"ranking": "37위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 9,241명",
+			"people": "인구수 9,266명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -332,7 +332,7 @@
 			"title": "인구수 순위",
 			"ranking": "39위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 9,022명",
+			"people": "인구수 9,039명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -358,7 +358,7 @@
 			"title": "인구수 순위",
 			"ranking": "36위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 10,823명",
+			"people": "인구수 10,869명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -376,7 +376,7 @@
 			"title": "더시드 최고기록",
 			"topRecode": "50층",
 			"topTime": "40분 58초",
-			"nameLevel": "튜브링 / Lv.249",
+			"nameLevel": "튜브링 / Lv.250",
 			"ranking": "3위",
 			"date": "달성일: 20년 9월 8일"
 		},
@@ -384,7 +384,7 @@
 			"title": "인구수 순위",
 			"ranking": "13위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 48,554명",
+			"people": "인구수 48,720명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
@@ -410,12 +410,12 @@
 			"title": "인구수 순위",
 			"ranking": "9위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 58,617명",
+			"people": "인구수 58,834명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"soulmaster": [
+	"soulMaster": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "60층",
@@ -436,7 +436,7 @@
 			"title": "인구수 순위",
 			"ranking": "5위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 75,213명",
+			"people": "인구수 75,401명",
 			"ratio": "4%",
 			"date": "기준일: 오늘"
 		}
@@ -462,7 +462,7 @@
 			"title": "인구수 순위",
 			"ranking": "31위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 19,475명",
+			"people": "인구수 19,497명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -488,7 +488,7 @@
 			"title": "인구수 순위",
 			"ranking": "32위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 17,644명",
+			"people": "인구수 17,670명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -496,11 +496,11 @@
 	"adele": [
 		{
 			"title": "무릉 도장 최고기록",
-			"topRecode": "69층",
-			"topTime": "14분 46초",
+			"topRecode": "70층",
+			"topTime": "15분 0초",
 			"nameLevel": "토우르 / Lv.270",
 			"ranking": "4위",
-			"date": "달성일: 20년 11월 18일"
+			"date": "달성일: 20년 11월 22일"
 		},
 		{
 			"title": "더시드 최고기록",
@@ -514,7 +514,7 @@
 			"title": "인구수 순위",
 			"ranking": "1위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 186,782명",
+			"people": "인구수 188,029명",
 			"ratio": "11%",
 			"date": "기준일: 오늘"
 		}
@@ -540,7 +540,7 @@
 			"title": "인구수 순위",
 			"ranking": "15위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 40,884명",
+			"people": "인구수 40,969명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -566,7 +566,7 @@
 			"title": "인구수 순위",
 			"ranking": "6위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 67,733명",
+			"people": "인구수 67,970명",
 			"ratio": "4%",
 			"date": "기준일: 오늘"
 		}
@@ -575,10 +575,10 @@
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "72층",
-			"topTime": "14분 24초",
+			"topTime": "14분 16초",
 			"nameLevel": "다넝 / Lv.275",
 			"ranking": "1위",
-			"date": "달성일: 20년 11월 13일"
+			"date": "달성일: 20년 11월 21일"
 		},
 		{
 			"title": "더시드 최고기록",
@@ -592,7 +592,7 @@
 			"title": "인구수 순위",
 			"ranking": "30위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 21,477명",
+			"people": "인구수 21,570명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -618,7 +618,7 @@
 			"title": "인구수 순위",
 			"ranking": "4위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 93,288명",
+			"people": "인구수 93,371명",
 			"ratio": "5%",
 			"date": "기준일: 오늘"
 		}
@@ -644,7 +644,7 @@
 			"title": "인구수 순위",
 			"ranking": "26위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 26,670명",
+			"people": "인구수 26,702명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -670,12 +670,12 @@
 			"title": "인구수 순위",
 			"ranking": "14위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 46,633명",
+			"people": "인구수 46,806명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"wildhunter": [
+	"wildHunter": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "66층",
@@ -696,12 +696,12 @@
 			"title": "인구수 순위",
 			"ranking": "40위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 7,515명",
+			"people": "인구수 7,534명",
 			"ratio": "0%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"windbreaker": [
+	"windBreaker": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "67층",
@@ -722,7 +722,7 @@
 			"title": "인구수 순위",
 			"ranking": "16위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 37,352명",
+			"people": "인구수 37,594명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -748,7 +748,7 @@
 			"title": "인구수 순위",
 			"ranking": "19위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 33,901명",
+			"people": "인구수 34,005명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -774,7 +774,7 @@
 			"title": "인구수 순위",
 			"ranking": "41위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 6,548명",
+			"people": "인구수 6,612명",
 			"ratio": "0%",
 			"date": "기준일: 오늘"
 		}
@@ -800,7 +800,7 @@
 			"title": "인구수 순위",
 			"ranking": "34위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 17,384명",
+			"people": "인구수 17,399명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -826,7 +826,7 @@
 			"title": "인구수 순위",
 			"ranking": "29위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 23,414명",
+			"people": "인구수 23,497명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -836,7 +836,7 @@
 			"title": "무릉 도장 최고기록",
 			"topRecode": "68층",
 			"topTime": "14분 54초",
-			"nameLevel": "초코빵내꺼야 / Lv.273",
+			"nameLevel": "초코빵내꺼야 / Lv.274",
 			"ranking": "6위",
 			"date": "달성일: 20년 11월 8일"
 		},
@@ -852,7 +852,7 @@
 			"title": "인구수 순위",
 			"ranking": "27위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 26,117명",
+			"people": "인구수 26,167명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -878,7 +878,7 @@
 			"title": "인구수 순위",
 			"ranking": "24위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 27,510명",
+			"people": "인구수 27,634명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -904,7 +904,7 @@
 			"title": "인구수 순위",
 			"ranking": "22위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 31,263명",
+			"people": "인구수 31,357명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -913,10 +913,10 @@
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "63층",
-			"topTime": "14분 53초",
+			"topTime": "14분 42초",
 			"nameLevel": "쥐환 / Lv.270",
-			"ranking": "18위",
-			"date": "달성일: 20년 11월 17일"
+			"ranking": "15위",
+			"date": "달성일: 20년 11월 24일"
 		},
 		{
 			"title": "더시드 최고기록",
@@ -930,7 +930,7 @@
 			"title": "인구수 순위",
 			"ranking": "38위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 9,122명",
+			"people": "인구수 9,151명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -956,7 +956,7 @@
 			"title": "인구수 순위",
 			"ranking": "20위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 33,631명",
+			"people": "인구수 33,729명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -974,7 +974,7 @@
 			"title": "더시드 최고기록",
 			"topRecode": "50층",
 			"topTime": "46분 35초",
-			"nameLevel": "메연시 / Lv.264",
+			"nameLevel": "메연시 / Lv.265",
 			"ranking": "7위",
 			"date": "달성일: 18년 8월 30일"
 		},
@@ -982,7 +982,7 @@
 			"title": "인구수 순위",
 			"ranking": "17위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 35,585명",
+			"people": "인구수 35,670명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -1008,7 +1008,7 @@
 			"title": "인구수 순위",
 			"ranking": "3위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 125,105명",
+			"people": "인구수 125,349명",
 			"ratio": "7%",
 			"date": "기준일: 오늘"
 		}
@@ -1034,12 +1034,12 @@
 			"title": "인구수 순위",
 			"ranking": "18위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 34,807명",
+			"people": "인구수 34,896명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
 	],
-	"flamewizard": [
+	"flameWizard": [
 		{
 			"title": "무릉 도장 최고기록",
 			"topRecode": "60층",
@@ -1060,7 +1060,7 @@
 			"title": "인구수 순위",
 			"ranking": "33위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 17,627명",
+			"people": "인구수 17,646명",
 			"ratio": "1%",
 			"date": "기준일: 오늘"
 		}
@@ -1070,7 +1070,7 @@
 			"title": "무릉 도장 최고기록",
 			"topRecode": "64층",
 			"topTime": "14분 52초",
-			"nameLevel": "춥구 / Lv.272",
+			"nameLevel": "춥구 / Lv.273",
 			"ranking": "10위",
 			"date": "달성일: 20년 9월 29일"
 		},
@@ -1086,7 +1086,7 @@
 			"title": "인구수 순위",
 			"ranking": "21위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 32,443명",
+			"people": "인구수 32,855명",
 			"ratio": "2%",
 			"date": "기준일: 오늘"
 		}
@@ -1112,7 +1112,7 @@
 			"title": "인구수 순위",
 			"ranking": "7위",
 			"jobCount": "전체직업 43개",
-			"people": "인구수 60,747명",
+			"people": "인구수 60,959명",
 			"ratio": "3%",
 			"date": "기준일: 오늘"
 		}
