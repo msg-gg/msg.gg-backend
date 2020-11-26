@@ -114,22 +114,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     nightlord.append(character)
 
 url = 'https://maple.gg/job/nightwalker'
@@ -159,22 +147,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     nightwalker.append(character)
 
 url = 'https://maple.gg/job/darkknight'
@@ -204,22 +180,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     darkknight.append(character)
 
 url = 'https://maple.gg/job/demonslayer'
@@ -249,22 +213,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     demonslayer.append(character)
 
 url = 'https://maple.gg/job/demonavenger'
@@ -294,22 +246,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     demonavenger.append(character)
 
 url = 'https://maple.gg/job/dualblader'
@@ -339,22 +279,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     dualblader.append(character)
 
 url = 'https://maple.gg/job/luminous'
@@ -384,22 +312,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     luminous.append(character)
 
 url = 'https://maple.gg/job/mercedes'
@@ -429,22 +345,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     mercedes.append(character)
 
 url = 'https://maple.gg/job/mechanic'
@@ -474,22 +378,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     mechanic.append(character)
 
 url = 'https://maple.gg/job/mihile'
@@ -519,22 +411,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     mihile.append(character)
 
 url = 'https://maple.gg/job/viper'
@@ -564,22 +444,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     viper.append(character)
 
 url = 'https://maple.gg/job/battlemage'
@@ -609,22 +477,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     battlemage.append(character)
 
 url = 'https://maple.gg/job/bowmaster'
@@ -654,22 +510,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     bowmaster.append(character)
 
 url = 'https://maple.gg/job/blaster'
@@ -699,22 +543,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     blaster.append(character)
 
 url = 'https://maple.gg/job/bishop'
@@ -744,22 +576,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     bishop.append(character)
 
 url = 'https://maple.gg/job/shadower'
@@ -789,22 +609,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     shadower.append(character)
 
 url = 'https://maple.gg/job/soulmaster'
@@ -834,22 +642,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     soulmaster.append(character)
 
 url = 'https://maple.gg/job/striker'
@@ -879,22 +675,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     striker.append(character)
 
 url = 'https://maple.gg/job/marks'
@@ -924,22 +708,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     marks.append(character)
 
 url = 'https://maple.gg/job/adele'
@@ -969,22 +741,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     adele.append(character)
 
 url = 'https://maple.gg/job/aran'
@@ -1014,22 +774,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     aran.append(character)
 
 url = 'https://maple.gg/job/ark'
@@ -1059,22 +807,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     ark.append(character)
 
 url = 'https://maple.gg/job/arkmagefp'
@@ -1104,22 +840,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     arkmagefp.append(character)
 
 url = 'https://maple.gg/job/arkmagetc'
@@ -1149,22 +873,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     arkmagetc.append(character)
 
 url = 'https://maple.gg/job/evan'
@@ -1194,22 +906,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     evan.append(character)
 
 url = 'https://maple.gg/job/angelicbuster'
@@ -1239,22 +939,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     angelicbuster.append(character)
 
 url = 'https://maple.gg/job/wildhunter'
@@ -1284,22 +972,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     wildhunter.append(character)
 
 url = 'https://maple.gg/job/windbreaker'
@@ -1329,22 +1005,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     windbreaker.append(character)
 
 url = 'https://maple.gg/job/shade'
@@ -1374,22 +1038,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     shade.append(character)
 
 url = 'https://maple.gg/job/illium'
@@ -1419,22 +1071,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     illium.append(character)
 
 url = 'https://maple.gg/job/xenon'
@@ -1464,23 +1104,11 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
-    nightlord.append(character)
+    xenon.append(character)
 
 url = 'https://maple.gg/job/zero'
 fp = urllib.request.urlopen(url)
@@ -1509,22 +1137,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     zero.append(character)
 
 url = 'https://maple.gg/job/cadena'
@@ -1554,22 +1170,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     cadena.append(character)
 
 url = 'https://maple.gg/job/kaiser'
@@ -1599,22 +1203,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     kaiser.append(character)
 
 url = 'https://maple.gg/job/cannonmaster'
@@ -1644,22 +1236,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     cannonmaster.append(character)
 
 url = 'https://maple.gg/job/captain'
@@ -1689,22 +1269,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     captain.append(character)
 
 url = 'https://maple.gg/job/kinesis'
@@ -1734,22 +1302,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     kinesis.append(character)
 
 url = 'https://maple.gg/job/paladin'
@@ -1779,22 +1335,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     paladin.append(character)
 
 url = 'https://maple.gg/job/pathfinder'
@@ -1824,22 +1368,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     pathfinder.append(character)
 
 url = 'https://maple.gg/job/phantom'
@@ -1869,22 +1401,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     phantom.append(character)
 
 url = 'https://maple.gg/job/flamewizard'
@@ -1914,22 +1434,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     flamewizard.append(character)
 
 url = 'https://maple.gg/job/hoyoung'
@@ -1959,22 +1467,10 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     hoyoung.append(character)
 
 url = 'https://maple.gg/job/hero'
@@ -2004,67 +1500,55 @@ for j in range(1, 15):
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[2]/b/a').text
     ratio = driver.find_element_by_xpath(
         '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[3]/div/div').text
-    recode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/b').text
-    recodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[4]/span').text
-    seedRecode = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/b').text
-    seedRecodeTime = driver.find_element_by_xpath(
-        '//*[@id="app"]/div[2]/div[4]/div[2]/section/div/table/tbody/tr[' + str(j) + ']/td[5]/span').text
     character['ranking'] = ranking
     character['worldImg'] = worldImg
     character['world'] = world
     character['ratio'] = ratio
-    character['recode'] = recode
-    character['recodeTime'] = recodeTime
-    character['seedRecode'] = seedRecode
-    character['seedRecodeTime'] = seedRecodeTime
     hero.append(character)
 
 data['nightlord'] = nightlord
-data['nightwalker'] = nightwalker
-data['darkknight']=darkknight
-data['demonslayer']=demonslayer
-data['demonavenger']=demonavenger
-data['dualblader']=dualblader
-data['luminous']=luminous
-data['mercedes']=mercedes
-data['mechanic']=mechanic
-data['mihile']=mihile
-data['viper']=viper
-data['battlemage']=battlemage
-data['bowmaster']=bowmaster
-data['blaster']=blaster
-data['bishop']=bishop
-data['shadower']=shadower
-data['soulmaster']=soulmaster
-data['striker']=striker
-data['marks']=marks
-data['adele']=adele
-data['aran']=aran
-data['ark']=ark
-data['arkmagefp']=arkmagefp
-data['arkmagetc']=arkmagetc
-data['evan']=evan
-data['angelicbuster']=angelicbuster
-data['wildhunter']=wildhunter
-data['windbreaker']=windbreaker
-data['shade']=shade
-data['illium']=illium
-data['xenon']=xenon
-data['zero']=zero
-data['cadena']=cadena
-data['kaiser']=kaiser
-data['cannonmaster']=cannonmaster
-data['captain']=captain
-data['kinesis']=kinesis
-data['paladin']=paladin
-data['pathfinder']=pathfinder
-data['phantom']=phantom
-data['flamewizard']=flamewizard
-data['hoyoung']=hoyoung
-data['hero']=hero
+data['nightWalker'] = nightwalker
+data['darkknight'] = darkknight
+data['demonslayer'] = demonslayer
+data['demonavenger'] = demonavenger
+data['dualblader'] = dualblader
+data['luminous'] = luminous
+data['mercedes'] = mercedes
+data['mecanic'] = mechanic
+data['mikhail'] = mihile
+data['viper'] = viper
+data['battleMage'] = battlemage
+data['bowmaster'] = bowmaster
+data['blaster'] = blaster
+data['bishop'] = bishop
+data['shadower'] = shadower
+data['soulMaster'] = soulmaster
+data['striker'] = striker
+data['marks'] = marks
+data['adele'] = adele
+data['aran'] = aran
+data['ark'] = ark
+data['arkmagefp'] = arkmagefp
+data['arkmagetc'] = arkmagetc
+data['evan'] = evan
+data['angelicbuster'] = angelicbuster
+data['wildHunter'] = wildhunter
+data['windBreaker'] = windbreaker
+data['shade'] = shade
+data['illium'] = illium
+data['xenon'] = xenon
+data['zero'] = zero
+data['cadena'] = cadena
+data['kaiser'] = kaiser
+data['cannonmaster'] = cannonmaster
+data['captain'] = captain
+data['kinesis'] = kinesis
+data['paladin'] = paladin
+data['pathfinder'] = pathfinder
+data['phantom'] = phantom
+data['flameWizard'] = flamewizard
+data['hoyoung'] = hoyoung
+data['hero'] = hero
 
 with open('JobPeople.json', 'w', encoding="utf-8") as make_file:
-	json.dump(data, make_file, ensure_ascii=False, indent="\t")
+    json.dump(data, make_file, ensure_ascii=False, indent="\t")
