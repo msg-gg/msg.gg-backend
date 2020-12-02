@@ -63,11 +63,35 @@ novaRank = []
 for j in range(1, 6):
     # 전체
     driver.get('https://maple.gg/rank/guild?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + '&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + '&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -79,6 +103,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -87,11 +112,35 @@ for j in range(1, 6):
 
     #루나
     driver.get('https://maple.gg/rank/guild/luna?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=1&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=1&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -103,6 +152,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -111,11 +161,35 @@ for j in range(1, 6):
 
     #스카니아
     driver.get('https://maple.gg/rank/guild/scania?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=17&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=7&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -127,6 +201,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -135,11 +210,35 @@ for j in range(1, 6):
 
     #엘리시움
     driver.get('https://maple.gg/rank/guild/elysium?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=12&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=12&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -151,6 +250,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -159,11 +259,35 @@ for j in range(1, 6):
 
     #리부트
     driver.get('https://maple.gg/rank/guild/reboot?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=2&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=2&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -175,6 +299,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -183,11 +308,35 @@ for j in range(1, 6):
 
     #크로아
     driver.get('https://maple.gg/rank/guild/croa?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=10&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=10&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -199,6 +348,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -207,11 +357,35 @@ for j in range(1, 6):
 
     #오로라
     driver.get('https://maple.gg/rank/guild/aurora?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=3&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=3&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -223,6 +397,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -231,11 +406,35 @@ for j in range(1, 6):
 
     #베라
     driver.get('https://maple.gg/rank/guild/bera?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=11&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=11&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -247,6 +446,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -255,11 +455,35 @@ for j in range(1, 6):
 
     #레드
     driver.get('https://maple.gg/rank/guild/red?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=4&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=4&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -271,6 +495,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -279,11 +504,35 @@ for j in range(1, 6):
 
     #유니온
     driver.get('https://maple.gg/rank/guild/union?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=6&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=6&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -295,6 +544,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -303,11 +553,35 @@ for j in range(1, 6):
 
     #제니스
     driver.get('https://maple.gg/rank/guild/zenith?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=9&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=9&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -319,6 +593,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -327,11 +602,35 @@ for j in range(1, 6):
 
     #이노시스
     driver.get('https://maple.gg/rank/guild/enosis?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=5&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=5&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -343,6 +642,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -351,11 +651,35 @@ for j in range(1, 6):
 
     #리부트2
     driver.get('https://maple.gg/rank/guild/reboot2?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=1&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=1&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -367,6 +691,7 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
@@ -375,11 +700,35 @@ for j in range(1, 6):
 
     #아케인
     driver.get('https://maple.gg/rank/guild/arcane?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=13&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=13&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -391,20 +740,45 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
         character['point'] = point
         arcaneRank.append(character)
 
-for j in range(1, 4):
     #노바
+for j in range(1, 4):
     driver.get('https://maple.gg/rank/guild/nova?page=' + str(j))
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j - 1) + 'w=14&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    url = 'https://maplestory.nexon.com/Ranking/World/Guild?page=' + str(2 * j) + 'w=14&t=1'
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("td", class_="left")
+
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
 
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        serverImg = imgURL[i * 2 - 1]
         guildName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/a').text
 
@@ -416,6 +790,7 @@ for j in range(1, 4):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
 
         character['rank'] = rank
+        character['serverImg'] = serverImg
         character['guildName'] = guildName
         character['master'] = master
         character['level'] = level
