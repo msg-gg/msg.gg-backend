@@ -88,11 +88,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -101,13 +110,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         dojangRank.append(character)
 driver.get('https://maple.gg/rank/dojang/reboot2')
 people = driver.find_element_by_xpath(
@@ -136,11 +151,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -149,13 +173,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         reboot2DojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/reboot')
@@ -185,11 +215,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -198,13 +237,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         reboot1DojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/aurora')
@@ -234,11 +279,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -247,12 +301,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         auroraDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/red')
@@ -282,11 +343,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -295,13 +365,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         redDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/enosis')
@@ -331,11 +407,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -344,13 +429,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         enosisDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/union')
@@ -380,11 +471,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -393,13 +493,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         unionDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/scania')
@@ -429,11 +535,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -442,13 +557,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         scaniaDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/luna')
@@ -478,11 +599,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -491,13 +621,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         lunaDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/zenith')
@@ -527,11 +663,21 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
+        character = {}
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -540,13 +686,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         zenithDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/croa')
@@ -576,11 +728,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -589,13 +750,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         croaDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/bera')
@@ -625,11 +792,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, num + 1):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -638,13 +814,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         beraDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/elysium')
@@ -674,11 +856,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -687,13 +878,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         elysiumDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/arcane')
@@ -723,11 +920,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -736,13 +942,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         arcaneDojangRank.append(character)
 
 driver.get('https://maple.gg/rank/dojang/nova')
@@ -772,11 +984,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -785,13 +1006,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         novaDojangRank.append(character)
 
 data['dojangRank'] = dojangRank
