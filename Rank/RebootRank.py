@@ -65,11 +65,21 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 21):
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        driver.get('https://maple.gg/rank/reboot?page=' + str(j))
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -79,12 +89,48 @@ for j in range(1, 6):
         popularity = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        driver.get('https://maplestory.nexon.com/Ranking/World/Total?page=' + str(2 * j - 1) + '&w=254')
+        guild = driver.find_element_by_xpath(
+            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[6]').text
+
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['popularity'] = popularity
+        character['guild'] = guild
+        rebootRank.append(character)
+
+    for i in range(11, 21):
+        driver.get('https://maple.gg/rank/reboot?page=' + str(j))
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        popularity = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+
+        driver.get('https://maplestory.nexon.com/Ranking/World/Total?page=' + str(2 * j) + '&w=254')
+        guild = driver.find_element_by_xpath(
+            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i - 10) + ']/td[6]').text
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['popularity'] = popularity
+        character['guild'] = guild
         rebootRank.append(character)
 
 
@@ -103,11 +149,21 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 21):
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        driver.get('https://maple.gg/rank/reboot/reboot2?page=' + str(j))
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -117,12 +173,48 @@ for j in range(1, 6):
         popularity = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        driver.get('https://maplestory.nexon.com/Ranking/World/Total?page=' + str(2 * j - 1) + '&w=1')
+        guild = driver.find_element_by_xpath(
+            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[6]').text
+
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['popularity'] = popularity
+        character['guild'] = guild
+        reboot2Rank.append(character)
+
+    for i in range(11, 21):
+        driver.get('https://maple.gg/rank/reboot/reboot2?page=' + str(j))
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        popularity = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+
+        driver.get('https://maplestory.nexon.com/Ranking/World/Total?page=' + str(2 * j) + '&w=1')
+        guild = driver.find_element_by_xpath(
+            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i - 10) + ']/td[6]').text
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['popularity'] = popularity
+        character['guild'] = guild
         reboot2Rank.append(character)
 
     # 리부트1 랭킹
@@ -140,11 +232,21 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
-    for i in range(1, 21):
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        driver.get('https://maple.gg/rank/reboot/reboot?page=' + str(j))
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -154,12 +256,48 @@ for j in range(1, 6):
         popularity = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
 
+        driver.get('https://maplestory.nexon.com/Ranking/World/Total?page=' + str(2 * j - 1) + '&w=2')
+        guild = driver.find_element_by_xpath(
+            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[6]').text
+
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['popularity'] = popularity
+        character['guild'] = guild
+        reboot1Rank.append(character)
+
+    for i in range(11, 21):
+        driver.get('https://maple.gg/rank/reboot/reboot?page=' + str(j))
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        popularity = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+
+        driver.get('https://maplestory.nexon.com/Ranking/World/Total?page=' + str(2 * j) + '&w=2')
+        guild = driver.find_element_by_xpath(
+            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i - 10) + ']/td[6]').text
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['popularity'] = popularity
+        character['guild'] = guild
         reboot1Rank.append(character)
 
 data['rebootRank'] = rebootRank
