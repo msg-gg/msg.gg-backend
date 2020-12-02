@@ -88,11 +88,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -101,13 +110,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         seedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/reboot2')
@@ -137,11 +152,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -150,13 +174,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         reboot2SeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/reboot')
@@ -186,11 +216,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -199,13 +238,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         reboot1SeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/aurora')
@@ -235,11 +280,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -248,12 +302,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
+        character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         auroraSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/red')
@@ -283,11 +344,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -296,13 +366,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         redSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/enosis')
@@ -332,11 +408,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -345,13 +430,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         enosisSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/union')
@@ -381,11 +472,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -394,13 +494,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         unionSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/scania')
@@ -430,11 +536,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -443,13 +558,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         scaniaSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/luna')
@@ -479,11 +600,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -492,13 +622,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         lunaSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/zenith')
@@ -528,11 +664,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -541,13 +686,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         zenithSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/croa')
@@ -577,11 +728,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -590,13 +750,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         croaSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/bera')
@@ -626,11 +792,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, num + 1):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -639,13 +814,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         beraSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/elysium')
@@ -675,11 +856,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -688,13 +878,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         elysiumSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/arcane')
@@ -724,11 +920,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -737,13 +942,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         arcaneSeedRank.append(character)
 
 driver.get('https://maple.gg/rank/seed/nova')
@@ -773,11 +984,20 @@ for j in range(1, num + 1):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -786,13 +1006,19 @@ for j in range(1, num + 1):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['guild'] = guild
         novaSeedRank.append(character)
 
 data['seedRank'] = seedRank
