@@ -77,11 +77,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -90,13 +99,21 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
-
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         unionRank.append(character)
 
 for j in range(1, 6):
@@ -115,11 +132,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -128,13 +154,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         reboot2UnionRank.append(character)
 
 for j in range(1, 6):
@@ -153,11 +188,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -166,13 +210,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         reboot1UnionRank.append(character)
 
 for j in range(1, 6):
@@ -191,11 +244,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -204,12 +266,21 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         auroraUnionRank.append(character)
 
 for j in range(1, 6):
@@ -228,11 +299,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -241,13 +321,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         redUnionRank.append(character)
 
 for j in range(1, 6):
@@ -266,11 +355,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -279,13 +377,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         enosisUnionRank.append(character)
 
 for j in range(1, 6):
@@ -304,11 +411,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -317,13 +433,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         unionUnionRank.append(character)
 
 for j in range(1, 6):
@@ -342,11 +467,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -355,13 +489,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         scaniaUnionRank.append(character)
 
 for j in range(1, 6):
@@ -380,11 +523,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -393,13 +545,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         lunaUnionRank.append(character)
 
 for j in range(1, 6):
@@ -418,11 +579,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -431,13 +601,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         zenithUnionRank.append(character)
 
 for j in range(1, 6):
@@ -456,11 +635,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -469,13 +657,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         croaUnionRank.append(character)
 
 for j in range(1, 6):
@@ -494,11 +691,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 6):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -507,13 +713,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         beraUnionRank.append(character)
 
 for j in range(1, 6):
@@ -532,11 +747,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -545,13 +769,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         elysiumUnionRank.append(character)
 
 for j in range(1, 6):
@@ -570,11 +803,20 @@ for j in range(1, 6):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -583,13 +825,22 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         arcaneUnionRank.append(character)
 
 for j in range(1, 4):
@@ -608,11 +859,20 @@ for j in range(1, 4):
     for i in soup:
         imgURL.append(i.find("img")["src"])
 
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
     for i in range(1, 21):
         character = {}
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
@@ -621,13 +881,22 @@ for j in range(1, 4):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
         recode = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[2]').text
+        power = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
         character['rank'] = rank
         character['img'] = img
+        character['serverImg'] = serverImg
         character['name'] = charName
         character['level'] = level
         character['job'] = job
         character['recode'] = recode
+        character['power'] = power
+        character['guild'] = guild
         novaUnionRank.append(character)
 
 data['unionRank'] = unionRank
