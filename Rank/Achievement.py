@@ -46,11 +46,24 @@ import json
 
 data = OrderedDict()
 worldRank = []
+auroraRank = []
+redRank = []
+enosisRank = []
+unionRank = []
+scaniaRank = []
+lunaRank = []
+zenithRank = []
+croaRank = []
+beraRank = []
+elysiumRank = []
+arcaneRank = []
+novaRank = []
+reboot1Rank = []
+reboot2Rank = []
 
 for j in range(1, 6):
-    # 랭킹
-    driver.get('https://maple.gg/rank/achievement?page=' + str(j))
-    url = 'https://maple.gg/rank/achievement?page=' + str(j)
+    driver.get('https://maple.gg/rank/achievement/luna?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/luna?page=' + str(j)
     fp = urllib.request.urlopen(url)
     source = fp.read();
     fp.close()
@@ -71,34 +84,8 @@ for j in range(1, 6):
     for i in soup:
         imgURL_1.append(i.find("img")["src"])
 
-    url = 'https://maplestory.nexon.game.naver.com/Ranking/Achievement?page=' + str(j)
-    fp = urllib.request.urlopen(url)
-    source = fp.read();
-    fp.close()
-
-    soup = BeautifulSoup(source, 'html.parser')
-    soup = soup.findAll("td", class_="ach_img")
-
-    imgURL_2 = []
-    imageNum = 0
-    for i in soup:
-        imgURL_2.append(i.find("img")["src"])
-
-    url = 'https://maplestory.nexon.game.naver.com/Ranking/Achievement?page=' + str(5 + j)
-    fp = urllib.request.urlopen(url)
-    source = fp.read();
-    fp.close()
-
-    soup = BeautifulSoup(source, 'html.parser')
-    soup = soup.findAll("td", class_="ach_img")
-
-    imageNum = 0
-    for i in soup:
-        imgURL_2.append(i.find("img")["src"])
-
     for i in range(1, 11):
         character = {}
-        driver.get('https://maple.gg/rank/achievement?page=' + str(j))
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
         img = imgURL[i - 1]
@@ -109,14 +96,18 @@ for j in range(1, 6):
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        ratingImg = imgURL_2[i - 1]
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        if j == 1 and i == 1:
+            ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img04.png'
+            rating = '골드'
         point = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
 
-        driver.get('https://maplestory.nexon.game.naver.com/Ranking/Achievement?page=' + str(2 * j - 1))
-        rating = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i) + ']/td[3]/span').text
-        character['rating'] = rating
         character['rank'] = rank
         character['img'] = img
         character['serverImg'] = serverImg
@@ -124,24 +115,31 @@ for j in range(1, 6):
         character['level'] = level
         character['job'] = job
         character['ratingImg'] = ratingImg
+        character['rating'] = rating
         character['point'] = point
-        worldRank.append(character)
+        character['guild'] = guild
+        lunaRank.append(character)
     for i in range(11, 21):
         character = {}
-        driver.get('https://maple.gg/rank/achievement?page=' + str(j))
         rank = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
-        img = imgURL[ + i - 1]
-        serverImg = imgURL_1[ + i - 1]
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
         charName = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
         level = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
         job = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
-        ratingImg = imgURL_2[i - 1]
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
         point = driver.find_element_by_xpath(
             '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
         character['rank'] = rank
         character['img'] = img
         character['serverImg'] = serverImg
@@ -149,15 +147,1191 @@ for j in range(1, 6):
         character['level'] = level
         character['job'] = job
         character['ratingImg'] = ratingImg
-        character['point'] = point
-
-        driver.get('https://maplestory.nexon.game.naver.com/Ranking/Achievement?page=' + str(2 * j))
-        rating = driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div[3]/div[1]/table/tbody/tr[' + str(i - 10) + ']/td[3]/span').text
         character['rating'] = rating
-        worldRank.append(character)
+        character['point'] = point
+        character['guild'] = guild
+        lunaRank.append(character)
 
-data['worldRank'] = worldRank
+    driver.get('https://maple.gg/rank/achievement/scania?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/scania?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        scaniaRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        scaniaRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/elysium?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/elysium?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        elysiumRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        elysiumRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/reboot?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/reboot?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        reboot1Rank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        reboot1Rank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/croa?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/croa?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        croaRank.append(character)
+
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        croaRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/aurora?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/aurora?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        auroraRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        auroraRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/bera?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/bera?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        beraRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        beraRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/red?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/red?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        redRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        redRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/union?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/union?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+            imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+            imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        unionRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        unionRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/zenith?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/zenith?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+            imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+            imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        zenithRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        zenithRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/enosis?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/enosis?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        enosisRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        enosisRank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/reboot2?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/reboot2?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        reboot2Rank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        reboot2Rank.append(character)
+
+    driver.get('https://maple.gg/rank/achievement/arcane?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/arcane?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+            imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+            imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        arcaneRank.append(character)
+    for i in range(11, 21):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[+ i - 1]
+        serverImg = imgURL_1[+ i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        arcaneRank.append(character)
+
+for j in range(1, 4):
+    driver.get('https://maple.gg/rank/achievement/nova?page=' + str(j))
+    url = 'https://maple.gg/rank/achievement/nova?page=' + str(j)
+    fp = urllib.request.urlopen(url)
+    source = fp.read();
+    fp.close()
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block mr-2 align-middle")
+
+    imgURL = []
+    imageNum = 0
+    for i in soup:
+        imgURL.append(i.find("img")["src"])
+
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("div", class_="d-inline-block align-middle")
+
+    imgURL_1 = []
+    imageNum = 0
+    for i in soup:
+        imgURL_1.append(i.find("img")["src"])
+
+    for i in range(1, 11):
+        character = {}
+        rank = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+        img = imgURL[i - 1]
+        serverImg = imgURL_1[i - 1]
+        charName = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+        level = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+        job = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+        ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+        rating = '실버'
+        point = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+        guild = driver.find_element_by_xpath(
+            '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+        if guild == '':
+            guild = '(없음)'
+
+        character['rank'] = rank
+        character['img'] = img
+        character['serverImg'] = serverImg
+        character['name'] = charName
+        character['level'] = level
+        character['job'] = job
+        character['ratingImg'] = ratingImg
+        character['rating'] = rating
+        character['point'] = point
+        character['guild'] = guild
+        novaRank.append(character)
+    if j == 3:
+        for i in range(11, 19):
+            character = {}
+            rank = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+            img = imgURL[+ i - 1]
+            serverImg = imgURL_1[+ i - 1]
+            charName = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+            level = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+            job = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+            ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+            rating = '실버'
+            point = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+            guild = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+            if guild == '':
+                guild = '(없음)'
+
+            character['rank'] = rank
+            character['img'] = img
+            character['serverImg'] = serverImg
+            character['name'] = charName
+            character['level'] = level
+            character['job'] = job
+            character['ratingImg'] = ratingImg
+            character['rating'] = rating
+            character['point'] = point
+            character['guild'] = guild
+    else:
+        for i in range(11, 21):
+            character = {}
+            rank = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/th').text
+            img = imgURL[+ i - 1]
+            serverImg = imgURL_1[+ i - 1]
+            charName = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/span/a').text
+            level = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[1]').text
+            job = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[1]/div[2]/div[1]/span[3]').text
+            ratingImg = 'https://ssl.nx.com/s2/game/maplestory/renewal/common/result_img05.png'
+            rating = '실버'
+            point = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[3]').text
+            guild = driver.find_element_by_xpath(
+                '//*[@id="app"]/section[4]/section/div/table/tbody/tr[' + str(i) + ']/td[4]').text
+            if guild == '':
+                guild = '(없음)'
+
+            character['rank'] = rank
+            character['img'] = img
+            character['serverImg'] = serverImg
+            character['name'] = charName
+            character['level'] = level
+            character['job'] = job
+            character['ratingImg'] = ratingImg
+            character['rating'] = rating
+            character['point'] = point
+            character['guild'] = guild
+        novaRank.append(character)
+
+data['auroraRank'] = auroraRank
+data['redRank'] = redRank
+data['enosisRank'] = enosisRank
+data['unionRank'] = unionRank
+data['scaniaRank'] = scaniaRank
+data['lunaRank'] = lunaRank
+data['zenithRank'] = zenithRank
+data['croaRank'] = croaRank
+data['beraRank'] = beraRank
+data['elysiumRank'] = elysiumRank
+data['arcaneRank'] = arcaneRank
+data['novaRank'] = novaRank
+data['reboot2Rank'] = reboot2Rank
+data['reboot1Rank'] = reboot1Rank
 
 with open('Achievement.json', 'w', encoding="utf-8") as make_file:
     json.dump(data, make_file, ensure_ascii=False, indent="\t")
