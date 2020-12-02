@@ -45,7 +45,6 @@ import json
 
 data = OrderedDict()
 worldRank = []
-
 auroraRank = []
 redRank = []
 enosisRank = []
@@ -1068,7 +1067,6 @@ for j in range(1, 6):
         character['guild'] = guild
         novaRank.append(character)
 
-data['worldRank'] = worldRank
 data['auroraRank'] = auroraRank
 data['redRank'] = redRank
 data['enosisRank'] = enosisRank
